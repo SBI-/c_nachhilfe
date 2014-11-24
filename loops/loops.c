@@ -30,6 +30,7 @@ int main()
     }
 
     printf("%s\n", upper_sentence);
+    free(upper_sentence);
     return EXIT_SUCCESS;
 }
 
