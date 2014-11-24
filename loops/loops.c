@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-bool isLetter(const char c);
-bool isLower(const char c);
-bool isUpper(const char c);
-char toUpper(const char c);
+bool is_letter(const char c);
+bool is_lower(const char c);
+bool is_upper(const char c);
+char to_upper(const char c);
 
 int main()
 {
@@ -20,37 +20,35 @@ int main()
 
     for (int i = 0; i < length - 1; ++i) {
         char current = sentence[i];
-        if (!isLetter(current)) {
+        if (!is_letter(current)) {
             continue;
         }
 
-        if (isLower(current)) {
-            upper_sentence[i] = toUpper(current);
+        if (is_lower(current)) {
+            upper_sentence[i] = to_upper(current);
         }
-
     }
 
     printf("%s\n", upper_sentence);
-
     return EXIT_SUCCESS;
 }
 
-bool isLetter(const char c)
+bool is_letter(const char c)
 {
-    return isUpper(c) || isLower(c);
+    return is_upper(c) || is_lower(c);
 }
 
-bool isUpper(const char c)
+bool is_upper(const char c)
 {
     return (c >= 'A' && c <= 'Z');
 }
 
-bool isLower(const char c)
+bool is_lower(const char c)
 {
     return c >= 'a' && c <= 'z';
 }
 
-char toUpper(const char c)
+char to_upper(const char c)
 {
     return c - 32;
 }
